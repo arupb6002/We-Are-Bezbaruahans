@@ -47,8 +47,26 @@
                         <div class="dot"></div>
                         <div class="dot"></div>
                     </div>
-
                 </div>
+                
+                <section class="suggest-box">
+    <h2>SUGGEST US</h2>
+    <p class="subtitle">What would you like us to add to this website?</p>
+
+    <form id="suggestForm">
+      <input type="text" name="user_name" placeholder="Name" required>
+
+      <input type="text" name="user_contact" placeholder="Email / Phone number" required>
+
+      <textarea name="user_suggestion" placeholder="Suggestion" required></textarea>
+
+      <button type="submit">SEND</button>
+    </form>
+
+    <p id="statusMsg"></p>
+  </section>
+                
+                
                 <div class="galary" <h3>Photo Galary</h3>
                 </div>
                 
@@ -99,9 +117,11 @@
  class="site-footer">
   <p>© 2026, ALL RIGHTS RESERVED</p>
   <p>MADE WITH <span class="heart">♥</span> FOR BATCH 2024–26</p>
+  <p><a href="wa.me/+916002148763">Contact Us</a></p>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
