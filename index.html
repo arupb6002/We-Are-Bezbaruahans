@@ -1,11 +1,243 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="refresh" content="0; url=https://newdomain.com/">
-  <title>Redirecting...</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirect to WeAreBezbaruah</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            color: white;
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .container {
+            text-align: center;
+            padding: 2rem;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            max-width: 90%;
+            width: 500px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        h1 {
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            font-size: 2.2rem;
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .description {
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+            line-height: 1.5;
+            color: #e0e0e0;
+        }
+        
+        .redirect-btn {
+            background: linear-gradient(to right, #4A00E0, #8E2DE2);
+            color: white;
+            border: none;
+            padding: 1.2rem 3rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 2rem;
+            width: 100%;
+            max-width: 300px;
+        }
+        
+        .redirect-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+            background: linear-gradient(to right, #8E2DE2, #4A00E0);
+        }
+        
+        .redirect-btn:active {
+            transform: translateY(0);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        .redirect-btn i {
+            font-size: 1.3rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .redirect-btn:hover i {
+            transform: translateX(5px);
+        }
+        
+        .info-box {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 1rem;
+            margin-top: 1.5rem;
+            text-align: left;
+        }
+        
+        .info-box p {
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            color: #d0d0d0;
+        }
+        
+        .url-display {
+            background-color: rgba(0, 0, 0, 0.3);
+            padding: 0.5rem;
+            border-radius: 5px;
+            font-family: monospace;
+            word-break: break-all;
+            color: #ffcc00;
+            font-size: 0.9rem;
+        }
+        
+        .countdown {
+            font-size: 1rem;
+            margin-top: 1rem;
+            color: #ffcc00;
+            font-weight: 600;
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(142, 45, 226, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(142, 45, 226, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(142, 45, 226, 0); }
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                padding: 1.5rem;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .redirect-btn {
+                padding: 1rem 2rem;
+                font-size: 1.3rem;
+            }
+        }
+    </style>
 </head>
 <body>
-  <p>Redirecting...</p>
+    <div class="container">
+        <h1>Website Redirect</h1>
+        
+        <div class="description">
+            Click the button below to be redirected to the target website. 
+            You'll be taken to the destination immediately.
+        </div>
+        
+        <button class="redirect-btn pulse" id="redirectButton">
+            <span>Redirect Now</span>
+            <i class="fas fa-external-link-alt"></i>
+        </button>
+        
+        <div class="countdown" id="countdown">
+            Auto-redirect in: <span id="timer">10</span> seconds
+        </div>
+        
+        <div class="info-box">
+            <p><strong>Destination:</strong></p>
+            <div class="url-display">https://wearebezbaruahns.rf.gd</div>
+            <p style="margin-top: 10px;"><i class="fas fa-info-circle"></i> You'll be redirected to an external website.</p>
+        </div>
+    </div>
+
+    <script>
+        const redirectButton = document.getElementById('redirectButton');
+        const countdownElement = document.getElementById('countdown');
+        const timerElement = document.getElementById('timer');
+        const targetUrl = 'https://wearebezbaruahns.rf.gd';
+        
+        // Function to redirect to the target URL
+        function redirectToWebsite() {
+            // Remove pulse animation during redirect
+            redirectButton.classList.remove('pulse');
+            
+            // Show redirecting message
+            redirectButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Redirecting...';
+            redirectButton.disabled = true;
+            
+            // Short delay for visual feedback, then redirect
+            setTimeout(() => {
+                window.location.href = targetUrl;
+            }, 500);
+        }
+        
+        // Add click event listener to the button
+        redirectButton.addEventListener('click', redirectToWebsite);
+        
+        // Auto-redirect countdown
+        let countdown = 10;
+        const countdownInterval = setInterval(() => {
+            countdown--;
+            timerElement.textContent = countdown;
+            
+            if (countdown <= 0) {
+                clearInterval(countdownInterval);
+                countdownElement.innerHTML = '<i class="fas fa-rocket"></i> Redirecting now...';
+                redirectToWebsite();
+            } else if (countdown <= 3) {
+                // Add visual emphasis when countdown is low
+                timerElement.style.color = '#ff5555';
+                timerElement.style.fontWeight = 'bold';
+            }
+        }, 1000);
+        
+        // Optional: Allow users to cancel the auto-redirect
+        countdownElement.addEventListener('click', function() {
+            clearInterval(countdownInterval);
+            countdownElement.innerHTML = '<i class="fas fa-times-circle"></i> Auto-redirect cancelled';
+            countdownElement.style.color = '#aaa';
+            countdownElement.style.cursor = 'default';
+        });
+        
+        // Add keyboard support (Enter key to redirect)
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Enter') {
+                redirectToWebsite();
+            }
+        });
+    </script>
 </body>
-</html>
+  </html>
